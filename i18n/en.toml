@@ -98,8 +98,8 @@ other = "Previous post"
 other = "Posted on"
 
 [readingTime]
-one = "One min read"
-other = "{{ .Count }} mins read"
+one = "One minute read"
+other = "{{ .Count }} minutes read"
 
 [recentPosts]
 other = "Recent Posts"

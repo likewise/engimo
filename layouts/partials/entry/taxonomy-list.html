@@ -3,7 +3,7 @@
 
 {{- $taxonomies := ( index $.Site.Taxonomies $txs ) -}}
 
-<div class='{{ $txs }}'>
+<span class='{{ $txs }}'>
   {{- partial "svg/icons" $tx -}}
   <span class='screen-reader-text'>{{ ( ( i18n $tx 2 ) | default $txs ) }}: </span>
   {{- range $i, $term := ( index $.Params $txs ) -}}
@@ -14,4 +14,4 @@
     </a>
     {{- end -}}
   {{- end -}}
-</div>
+</span>

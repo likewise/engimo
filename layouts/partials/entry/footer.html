@@ -1,7 +1,7 @@
 {{ if not ( eq .Section "page" ) }}
 <footer class='entry-footer'>
-  <div class='container sep-before'>
   {{- if and ( eq .Site.Params.settings.showLastmod true ) ( not ( eq .Lastmod .Date ) ) -}}
+  <div class='container sep-before'>
     {{- $dateFormat := ( .Site.Params.settings.dateFormat | default "2006, Jan 02" ) -}}
     <div class='last-updated'>
       {{- partial "svg/icons" "edit" -}}
@@ -10,16 +10,7 @@
         {{- .Lastmod.Format $dateFormat -}}
       </time>
     </div>
-  {{- end -}}
-
-  {{ range $taxonomy, $pages := .Site.Taxonomies }}
-    {{- if not ( eq $taxonomy "authors" ) -}}
-      {{- if ( index $.Params $taxonomy ) -}}
-        {{- $.Scratch.Set "taxonomy" $taxonomy -}}
-        {{- partial "entry/taxonomy-list" $ -}}
-      {{- end -}}
-    {{- end -}}
-  {{ end }}
   </div>
+  {{- end -}}
 </footer>
 {{ end }}
